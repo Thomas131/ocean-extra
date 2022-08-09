@@ -1,0 +1,15 @@
+name: Smoketest
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  runs:
+    runs-on: wordpress
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test
+      run: cat /etc/os-release
